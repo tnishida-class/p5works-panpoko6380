@@ -1,21 +1,21 @@
 // ギリシャ国旗
-function setup() {
-  const blue = color(0, 51, 160);
-  createCanvas(270, 180);
-  // noStroke();
-  background(255);
+function setup(){
+  createCanvas(400,300)
+  for(let i = 0; i < 15; i++){
+  for(let j = 0; j < 9; j++){
+    noStroke()
+       if(j<5&&i<3&&i>=2){fill(255,255,255)}
+    else if (i<5&&j<3&&j>=2){fill(255,255,255)}
 
-  let d = height / 9; // 縞1本の太さ
+    else if (i<5&&j<5){fill(0,0,225)}
 
-  for(let i = 0; i < 9; i++){
-    // BLANK[1] (hint: 縞の色を交互に変えるには2で割った余りを使おう)
-    rect(0, i * d, width, (i + 1) * d);
+   else if(j%2==0){fill(0,0,225)}
+
+    else if (j%2==1){fill(255,255,255)}
+
+    rect(i * 20, j * 20, 20, 20);
   }
+}
 
-  fill(blue);
-  let size = d * 5;
-  rect(0, 0, size, size);
 
-  fill(255);
-  // BLANK[2] (hint: 白い十字を描くには rect を二つ描こう)
 }
