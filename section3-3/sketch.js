@@ -23,10 +23,16 @@ function calendar(y, m){
 function isLeapYear(y){
   return (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0);
 }
-
-function daysInYear(y){
-  // BLANK[1]
+function setup(){
+  createCanvas(200, 200)
+  text(daysInYear(2000),100,100)
 }
+function daysInYear(y){
+  return isLeapYear(y)?366:365
+}
+function isLeapYear(y){return (y%4==0) && (y%100!= 0) || (y%400==0);
+}
+
 
 function daysInMonth(y, m){
   if(m == 2){
