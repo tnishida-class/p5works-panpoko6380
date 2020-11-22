@@ -16,7 +16,7 @@ function draw(){
   fill(0,0,255)
 
   translate(x,y)
-  rotate(random(PI/3))
+  rotate(frameCount/10)
   translate(-x,-y)
  star(x,y,50,)
   x+=5
@@ -28,13 +28,14 @@ function draw(){
   if(y > height){ y = 0; }
   if(y < 0){ y = height; }
 }
+let angle=PI/6
 function star(cx, cy, r,angle){
 
   beginShape();
   for(var i = 0; i < 20; i++){
     var theta = TWO_PI * i * 2 / 5 - HALF_PI;
 
-
+    
     // BLANK[1] (hint: angle 分だけ星を回転させるには？)
     var x = cx + cos(theta) * r;
     var y = cy + sin(theta) * r;
